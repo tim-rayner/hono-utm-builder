@@ -7,7 +7,7 @@ Prerequisites:
 To develop locally:
 
 ```
-npm install
+pnpm install
 vc dev
 ```
 
@@ -18,13 +18,13 @@ open http://localhost:3000
 To build locally:
 
 ```
-npm install
+pnpm install
 vc build
 ```
 
 To deploy:
 
 ```
-npm install
+pnpm install
 vc deploy
 ```
