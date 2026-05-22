@@ -26,6 +26,9 @@ importers:
       postgres:
         specifier: ^3.4.9
         version: 3.4.9
+      server@latest:
+        specifier: link:supabase/server@latest
+        version: link:supabase/server@latest
     devDependencies:
       '@types/node':
         specifier: ^20.11.17

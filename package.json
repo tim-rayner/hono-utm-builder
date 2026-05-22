@@ -13,7 +13,8 @@
     "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",
     "hono": "^4.12.21",
-    "postgres": "^3.4.9"
+    "postgres": "^3.4.9",
+    "server@latest": "link:supabase/server@latest"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",

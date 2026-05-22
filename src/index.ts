@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import { withSupabase } from "@supabase/server/adapters/hono";
 import { postLink } from "./features/link/controller.js";
 
 const app = new Hono();
@@ -26,7 +27,7 @@ app.onError((err, c) => {
 /**
  * Create a tracked UTM link
  */
-app.post("/api/links", postLink);
+app.post("/api/links", withSupabase({ auth: "none" }), postLink);
 /**
  * Log visit + redirect
  */
