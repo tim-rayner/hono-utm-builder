@@ -29,3 +29,27 @@ export const createLink = async (supabase: SupabaseClient, url: string) => {
     createdAt: link.created_at,
   };
 };
+
+// Get all Links Service
+export const getAll = async (supabase: SupabaseClient) => {
+  const { data: links, error } = await supabase
+    .from("links")
+    .select()
+    .order("created_at", { ascending: false });
+  if (error) {
+    throw error;
+  }
+  return links;
+};
+
+// Delete Link Service
+export const deleteLink = async (supabase: SupabaseClient, code: string) => {
+  const { data: link, error } = await supabase
+    .from("links")
+    .delete()
+    .eq("code", code);
+  if (error) {
+    throw error;
+  }
+  return link;
+};
