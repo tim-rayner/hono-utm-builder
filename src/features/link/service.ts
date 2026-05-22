@@ -2,7 +2,7 @@ import { db } from "../../db/client.js";
 import { links } from "../../db/schema.js";
 
 // Create Link Service
-export const createLinkService = async (url: string) => {
+export const createLink = async (url: string) => {
   const link = await db
     .insert(links)
     .values({
