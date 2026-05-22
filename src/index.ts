@@ -1,6 +1,6 @@
 import { withSupabase } from "@supabase/server/adapters/hono";
 import { Hono } from "hono";
-import { notFound } from "./features/404/index.js";
+import { notFound, onError } from "./features/errors/index.js";
 import {
   list as listLinks,
   post as postLink,
@@ -24,10 +24,7 @@ app.get("/health", (c) => {
 
 app.notFound(notFound);
 
-app.onError((err, c) => {
-  console.error(err);
-  return c.text("Doh! Something went wrong 🤦‍♂️ Please try again later.", 500);
-});
+app.onError(onError);
 
 /**
  * Create a tracked UTM link

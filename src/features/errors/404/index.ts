@@ -25,7 +25,7 @@ export const notFound = (c: Context) => {
     </head>
     <body>
       <img src="https://media.giphy.com/media/14uQ3cOFteDaU/giphy.gif" alt="lost" />
-      <p>Uh oh... we're having trouble finding that page 🧐</p>
+      <p>Uh oh... we're having trouble finding tdhat page 🧐</p>
     </body>
   </html>`,
     404,
