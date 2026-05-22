@@ -17,16 +17,7 @@ export const createLink = async (supabase: SupabaseClient, url: string) => {
   }
 
   return {
-    id: link.id,
-    code: link.code,
-    baseUrl: link.base_url,
-    utmSource: link.utm_source,
-    utmMedium: link.utm_medium,
-    utmCampaign: link.utm_campaign,
-    utmTerm: link.utm_term,
-    utmContent: link.utm_content,
-    fullUrl: link.full_url,
-    createdAt: link.created_at,
+    redirectUrl: `${process.env.BASE_URL || "http://localhost:3000"}/api/go/${link.code}`,
   };
 };
 

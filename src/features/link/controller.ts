@@ -4,8 +4,8 @@ import { createLink, deleteLink, getAll } from "./service.js";
 //POST /api/links
 export const post = async (c: Context) => {
   const { url } = await c.req.json();
-  const link = await createLink(c.var.supabaseContext.supabase, url);
-  return c.json(link, 201);
+  const linksResponse = await createLink(c.var.supabaseContext.supabase, url);
+  return c.json(linksResponse, 201);
 };
 
 // GET /api/links

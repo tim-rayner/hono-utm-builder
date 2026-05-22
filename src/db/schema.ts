@@ -10,7 +10,9 @@ export const links = pgTable("links", {
   utmTerm: varchar("utm_term", { length: 255 }),
   utmContent: varchar("utm_content", { length: 255 }),
   fullUrl: text("full_url").notNull(),
-  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .defaultNow()
+    .notNull(),
 });
 
 export const visits = pgTable("visits", {
@@ -18,9 +20,13 @@ export const visits = pgTable("visits", {
   linkCode: varchar("link_code", { length: 64 })
     .notNull()
     .references(() => links.code),
-  visitedAt: timestamp("visited_at", { withTimezone: true }).defaultNow().notNull(),
+  visitedAt: timestamp("visited_at", { withTimezone: true })
+    .defaultNow()
+    .notNull(),
   ip: varchar("ip", { length: 64 }),
   userAgent: text("user_agent"),
   referrer: text("referrer"),
 });
 
+export type Link = typeof links.$inferSelect;
+export type Visit = typeof visits.$inferSelect;
