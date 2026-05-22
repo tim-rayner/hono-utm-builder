@@ -1,5 +1,6 @@
 import { withSupabase } from "@supabase/server/adapters/hono";
 import { Hono } from "hono";
+import { notFound } from "./features/404/index.js";
 import {
   list as listLinks,
   post as postLink,
@@ -21,12 +22,7 @@ app.get("/health", (c) => {
   return c.text("OK 🔥");
 });
 
-app.notFound((c) => {
-  return c.text(
-    "Uh oh... we're having trouble finding that page 🧐 please try again later.",
-    404,
-  );
-});
+app.notFound(notFound);
 
 app.onError((err, c) => {
   console.error(err);
