@@ -1,4 +1,11 @@
-炎
+# 炎
+
+Just a basic UTM link builder built with Hono.js to see what the 'Hono' fuss was all about. 
+
+### My verdict: 
+Fast, easy to reason with - I'd use for an API if I needed something lightweight 👍🏻
+
+## Install Guide
 
 Prerequisites:
 
